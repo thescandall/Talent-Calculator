@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="talents.css">
+</head>
+<body>
+
+<h2>Talent Calculator for The Witcher 3: Wild Hunt</h2>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openTree(event, 'Combat')" id="defaultOpen" style="background-color:red">Combat</button>
+  <button class="tablinks" onclick="openTree(event, 'Signs')" style="background-color:blue">Signs</button>
+  <button class="tablinks" onclick="openTree(event, 'Alchemy')" style="background-color:green">Alchemy</button>
+  <button class="tablinks" onclick="openTree(event, 'General')">General</button>
+</div>
+
+<div id="Combat" class="tabcontent">
+  <h3>Combat</h3>
+  <p>Combat talents</p>
+</div>
+
+<div id="Signs" class="tabcontent">
+  <h3>Signs</h3>
+  <p>Signs talents</p> 
+</div>
+
+<div id="Alchemy" class="tabcontent">
+  <h3>Alchemy</h3>
+  <p>Alchemy talents</p>
+</div>
+
+<div id="General" class="tabcontent">
+	<h3> General</h3>
+	<p>General Talents</p>
+
+<script>
+function openTree(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click()
+</script>
+
+</body>
+</html> 
